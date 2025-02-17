@@ -25,8 +25,9 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
 
-depositRoi = 0.75
-currentRoi = 0
-savingsRoi = 1.25
-LoanRoi = 8.6
+account:
+  depositRoi = 0.75
+  currentRoi = 0
+  savingsRoi = 1.25
+  LoanRoi = 8.0
 
