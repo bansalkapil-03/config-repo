@@ -12,7 +12,8 @@ spring:
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
-  management:
+
+management:
   endpoints:
     web:
       exposure:
@@ -26,8 +27,7 @@ eureka:
     fetch-registry: true
 
 account:
-  depositRoi = 0.75
-  currentRoi = 0
-  savingsRoi = 1.25
-  LoanRoi = 8.0
-
+  depositRoi: 0.75
+  currentRoi: 0
+  savingsRoi: 1.25
+  loanRoi: 8.0
