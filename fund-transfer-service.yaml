@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: fund-transfer-service
+  kafka:
+    bootstrap-servers: localhost:9092
   datasource: 
     url: jdbc:postgresql://localhost:5432/fundtransfers_db
     username: postgres
