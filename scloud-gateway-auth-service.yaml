@@ -1,6 +1,3 @@
-server:
-  port: 8111
-
 spring:
   application:
     name: scloud-gateway-auth-service
@@ -45,7 +42,9 @@ spring:
             filters:
               - StripPrefix=2
 
-
+server:
+  port: 8111
+  
 eureka:
   client:
     service-url:
