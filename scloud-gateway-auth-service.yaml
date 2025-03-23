@@ -1,0 +1,67 @@
+server:
+  port: 8111
+
+spring:
+  application:
+    name: scloud-gateway-auth-service
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          # Route for account-service API
+          - id: configRoute1
+            uri: lb://account-service
+            predicates:
+              - Path=/BYbank/api/accounts/**
+              - Method=GET,POST,PUT,DELETE
+            filters:
+              - StripPrefix=2
+
+          # Route for transaction-service API
+          - id: configRoute2
+            uri: lb://transaction-service
+            predicates:
+              - Path=/BYbank/api/transactions/**
+              - Method=GET,POST
+            filters:
+              - StripPrefix=2
+
+          # Route for fund-transfer-service API
+          - id: configRoute3
+            uri: lb://fund-transfer-service
+            predicates:
+              - Path=/BYbank/api/fundTransfers/**
+              - Method=POST,GET
+            filters:
+              - StripPrefix=2
+
+          # Route for fund-transfer-service API
+          - id: configRoute4
+            uri: lb://auth-service
+            predicates:
+              - Path=/BYbank/api/auth/**
+              - Method=POST
+            filters:
+              - StripPrefix=2
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+security:
+  jwt:
+    secret-key: OfbsqwIxSnCraddedEEfllUjsZiIp
+    token-duration: 1D
