@@ -5,9 +5,9 @@ spring:
   application:
     name: fund-transfer-service
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost}:9092
   datasource: 
-    url: jdbc:postgresql://localhost:5432/fundtransfers_db
+    url: jdbc:postgresql://${SPRING_DATASOURCE_SERVERS:localhost}:5432/fundtransfers_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -25,7 +25,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_SERVICE_SERVERS:localhost}:8761/eureka
     register-with-eureka: true
     fetch-registry: true
   instance:
