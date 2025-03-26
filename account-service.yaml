@@ -35,3 +35,5 @@ account:
   currentRoi: 0
   savingsRoi: 1.25
   loanRoi: 8.0
+
+debug: true
