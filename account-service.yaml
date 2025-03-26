@@ -7,7 +7,7 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost}:9092
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgres://localhost:5432/accounts_db}
+    url: jdbc:postgres://${SPRING_DATASOURCE_SERVERS:localhost}:5432/accounts_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
