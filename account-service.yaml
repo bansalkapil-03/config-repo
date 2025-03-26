@@ -10,7 +10,7 @@ spring:
     url: jdbc:postgres://${SPRING_DATASOURCE_SERVERS:localhost}:5432/accounts_db
     username: postgres
     password: postgres
-    driver-class-name: org.postgresql.Driver
+    # driver-class-name: org.postgresql.Driver
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
