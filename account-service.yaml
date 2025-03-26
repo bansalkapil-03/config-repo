@@ -7,10 +7,10 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost}:9092
   datasource:
-    url: jdbc:postgres://${SPRING_DATASOURCE_SERVERS:localhost}:5432/accounts_db
+    url: jdbc:postgresql://${SPRING_DATASOURCE_SERVERS:localhost}:5432/accounts_db
     username: postgres
-    password: postgres
-    # driver-class-name: org.postgresql.Driver
+    password: postgres    
+
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
